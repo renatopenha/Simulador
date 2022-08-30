@@ -1,0 +1,175 @@
+<!DOCTYPE html><!-- doctype do HTML5 -->
+<html>
+
+<head>
+  <title>Simulador COAGIN</title>
+
+  <!-- Importante para habilitar os recursos de Responsividade em conjunto com o CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <style>
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .figura {
+      text-align: center;
+    }
+
+    .form-container span.input-label {
+      display: inline-block;
+      width: 220px;
+      /* width a ajustar */
+      text-align: left;
+      padding-right: 10px;
+    }
+  </style>
+
+  <h1>COESÃO DE EQUIPES, AGILIDADE E INTRAEMPREENDEDORISMO </h1>
+
+  <p>
+    <font size=5>Este simulador permite que se possa estimar a coesão de uma equipe de projetos em função do
+      empreendedorismo de seus participantes, e do nível indireto de agilidade da organização.</font>
+    <br>
+    <br>
+    <hr>
+  </p>
+
+  <!-- imagem do modelo -->
+  <div class="figura">
+    <img src="imagens/capa4.jpg" width="900" height="420">
+  </div>
+
+  <br>
+  <br>
+  <hr>
+
+  <!--Inputs-->
+  <h2>Entrada de dados</h2>
+  <!-- caixas de texto -->
+
+  <div>
+    <div class="form-container">
+      <span class="input-label">INTRAEMPREENDEDORISMO:</span><input type="text" id="IE" readonly>
+      <br>
+      <span class="input-label">Renovação estratégica:</span><input type="text" id="RE"
+        placeholder="Renovação estratégica" required>
+      <br>
+      <span class="input-label">Relacionado ao negócio:</span><input type="text" id="RN"
+        placeholder="Relacionado ao negócio" required>
+      <br>
+      <span class="input-label">Agilidade:</span><input type="text" id="AG" placeholder="Agilidade" required>
+      <br>
+    </div>
+
+    <button id="btn-executar">Calcular</button>
+
+    <!-- enviar dos dados -->
+
+    <!-- Tabela 1 -->
+    <h2>Variáveis</h2>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>VARIÁVEIS</th>
+            <th>DIRETO</th>
+            <th>INDIRETO</th>
+            <th>TOTAL</th>
+            <th>MÉDIA ESPERADA</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>INTRAEMPREENDEDORISMO</td>
+            <td>0,065</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RENOVAÇÃO ESTRATÉGICA</td>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>RELACIONADO AO NEGÓCIO</td>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>AGILIDADE</td>
+            <td>0,387</td>
+            <td></td>
+            <td>-</td>
+            <td>0,387</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Tabela 2 -->
+      <br>
+      <br>
+      <br>
+
+      <h2>X e Y</h2>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Efeito Total</th>
+              <th>Média Constructo</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>INTRAEMPREENDEDORISMO</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>AGILIDADE</td>
+              <td> </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+
+      <div class="container">
+        <!-- container -->
+        <!-- Criação de colunas -->
+      </div> <!-- /container -->
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="main.js"></script>
+
+</html>
