@@ -40,5 +40,26 @@ function chamarAPI() {
         //Coesão da Equipe
         //Coesão da Equipe Total Esperado
         var vCEtotalesp = (vINTRAmedesp + vAGILmedesp)
+        $("#TECE").val(vCEtotalesp.toFixed(2));
         console.log('o Valor de CE Total Esperado é: ' + vCEtotalesp.toFixed(2) + '<br/>')
+
+        //joga valores na tabela 1
+        let tableBody = $("#tb_valores")
+        tableBody.html("")
+        let linha = "<tr><td>INTRAEMPREENDEDORISMO</td><td>" + vINTRAdir.toFixed(3) + "</td><td>" + vINTRAind.toFixed(3) + "</td><td>" + vINTRAtot.toFixed(3) + " </td><td>" + vINTRAmedesp.toFixed(3) + "</td></tr>";
+        tableBody.append(linha);
+        let linha2 = "<tr><td>RENOVAÇÃO ESTRATÉGICA</td><td></td><td></td><td></td><td></td></tr>";
+        tableBody.append(linha2);
+        let linha3 = "<tr><td>RELACIONADO AO NEGÓCIO</td><td></td><td></td><td></td><td></td></tr>";
+        tableBody.append(linha3)
+        let linha4 = "<tr><td>AGILIDADE</td><td>0,387</td><td> </td><td>0,387</td><td>" + vAGILmedesp.toFixed(3) + "</td></tr>";
+        tableBody.append(linha4)
+
+        //joga valores na tabela 2
+        let tableBody2 = $("#tb_valores_finais")
+        tableBody2.html("")
+        let linha5 = "<tr><td>INTRAEMPREENDEDORISMO</td><td>0,201</td><td>" + vINTRA.toFixed(3) + "</td>";
+        tableBody2.append(linha5);
+        let linha6 = "<tr><td>AGILIDADE</td><td>0,387</td><td>" + vAG + "</td>";
+        tableBody2.append(linha6)
 }
