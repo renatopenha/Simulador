@@ -1,7 +1,33 @@
 $(document).ready(
         function () {
                 $("#btn-executar").click(chamarAPI);
+
+               
         });
+
+
+//documentação:
+//https://developers.google.com/chart/interactive/docs/gallery/bubblechart?hl=pt-br
+function drawSeriesChart(intraempreendedorismoX, intraempreendedorismoY, agilidadeX, agilidadeY) {
+
+        var data = google.visualization.arrayToDataTable([
+                ['Dimensão', 'Média da Variável', 'Efeito da variável'],
+                ['intraempreendedorismo', intraempreendedorismoX, intraempreendedorismoY],
+                ['agilidade', agilidadeX, agilidadeY]
+        ]);
+
+        var options = {
+                title: 'Efeito da Variável (importância) x Média da Variável (performance).',
+                hAxis: { title: 'Efeito da Variável (importância)', viewWindow: {max: 10} },
+                vAxis: { title: 'Média da Variável (performance)', viewWindow: {max: 10}  },
+                bubble: { textStyle: { fontSize: 11 } },
+                explorer: { maxZoomOut: 2 },
+                colorAxis: {colors: ['yellow', 'red']}
+        };
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+        chart.draw(data, options);
+}
 
 function chamarAPI() {
 
@@ -61,5 +87,8 @@ function chamarAPI() {
         let linha5 = "<tr><td>INTRAEMPREENDEDORISMO</td><td>0,201</td><td>" + vINTRA.toFixed(3) + "</td>";
         tableBody2.append(linha5);
         let linha6 = "<tr><td>AGILIDADE</td><td>0,387</td><td>" + vAG + "</td>";
-        tableBody2.append(linha6)
+        tableBody2.append(linha6);
+
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(() => drawSeriesChart(vINTRAdir,vINTRAind, 0.387,vAG ));
 }
